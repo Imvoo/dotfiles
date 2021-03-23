@@ -2,7 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kevin.vo/.oh-my-zsh"
+
+# Work laptop configs
+{{- if eq .chezmoi.hostname "kevin.vo" }}
+    export ZSH="/Users/kevin.vo/.oh-my-zsh"
+{{- else}}
+    export ZSH="/home/imvoo/.oh-my-zsh"
+{{- end }}
+
+export OKTA_USERNAME=kevin.vo
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +76,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-z zsh-autosuggestions)
+plugins=(zsh-z zsh-autosuggestions last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
