@@ -3,13 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 
-# Work laptop configs
-{{- if eq .chezmoi.hostname "kevin.vo" }}
-    export ZSH="/Users/kevin.vo/.oh-my-zsh"
-{{- else}}
-    export ZSH="/home/imvoo/.oh-my-zsh"
-{{- end }}
-
+export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
 export OKTA_USERNAME=kevin.vo
 
 # Set name of the theme to load --- if set to "random", it will
