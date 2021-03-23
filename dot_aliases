@@ -1,0 +1,4 @@
+alias gp="git pull"
+alias gco="git checkout"
+alias gs="git stash"
+alias gsp="git stash pop
