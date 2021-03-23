@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# -e -> exit as soon as there's an error
+# -x -> print commands to terminal as they're run
+set -ex
+
+{{- if eq .chezmoi.os "linux" }}
+    sudo apt update
+    sudo apt install zsh
+{{- else if eq .chezmoi.os "darwin" }}
+
+{{- end }}
+
+# zsh-syntax-highlighting
+ZSH_SYNTAX_HIGHLIGHTING_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING_DIR ]
+then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_DIR
+else
+    cd $ZSH_SYNTAX_HIGHLIGHTING_DIR
+    git pull
+fi
