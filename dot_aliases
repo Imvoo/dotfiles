@@ -5,4 +5,7 @@ alias gsp="git stash pop"
 alias gssi="git stash save --keep-index"
 alias grm="git rebase master"
 
+alias current-branch="git rev-parse --abbrev-ref HEAD"
+alias split-pr="git diff master $(current-branch) > pr-patch"
+
 alias today="date -u +\"%FT%H%MZ\""
