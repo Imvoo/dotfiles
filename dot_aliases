@@ -7,5 +7,6 @@ alias grm="git rebase master"
 
 alias current-branch="git rev-parse --abbrev-ref HEAD"
 alias split-pr="git diff master $(current-branch) > pr-patch"
+alias split-pr-apply="git apply --3way pr-patch"
 
 alias today="date -u +\"%FT%H%MZ\""
