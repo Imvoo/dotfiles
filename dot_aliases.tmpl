@@ -12,3 +12,10 @@ alias split-pr='git diff master $(current-branch) > pr-patch'
 alias split-pr-apply="git apply --3way pr-patch"
 
 alias today="date -u +\"%FT%H%MZ\""
+
+{{- if eq .chezmoi.os "linux" }}
+
+# Windows computer config
+alias mpv-double-audio="/mnt/d/Software/mpv/mpv.exe --lavfi-complex='[aid1] [aid2] amix [ao]'"
+
+{{- end }}
