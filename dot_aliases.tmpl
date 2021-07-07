@@ -8,6 +8,8 @@ alias gss="git stash save"
 alias gssi="git stash save --keep-index"
 alias grm="git rebase master"
 alias gu="git reset --soft HEAD~1"
+alias gca="git commit --amend"
+alias grc="git rebase --continue"
 
 alias current-branch="git rev-parse --abbrev-ref HEAD"
 alias split-pr='git diff master $(current-branch) > pr-patch'
