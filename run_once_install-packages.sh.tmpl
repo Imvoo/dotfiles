@@ -11,7 +11,10 @@ set -ex
 
 {{- end }}
 
-# zsh-syntax-highlighting
+# oh-my-zsh installation
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# zsh-syntax-highlighting - colours (for valid or invalid command) while typing
 ZSH_SYNTAX_HIGHLIGHTING_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 if [ ! -d $ZSH_SYNTAX_HIGHLIGHTING_DIR ]
 then
@@ -20,3 +23,9 @@ else
     cd $ZSH_SYNTAX_HIGHLIGHTING_DIR
     git pull
 fi
+
+# zsh-z - jumping around to common directories
+git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+
+# zsh-autosuggestions - shows recent commands as you type them
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
